@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Inheritance and Prototype</title>
+  </head>
+  <body>
+    <h1 align="center">
+      JavaScript Questions
+      <br />
+      Inheritance and Prototype
+    </h1>
+    <div class="box">
+      <h2>
+        1. Create 2 objects - parent and child. Attach methods to parent and use
+        those methods in child object using parents prototype.
+      </h2>
+      <pre>
+  const child = {
+      name: "Mohan",
+      rollNo: 101,
+    };
+    const Parent = {
+      no: 8484848484,
+      add: "Bavdhan pune",
+      __proto__: child,
+    };
+  console.log(Parent.name, Parent.rollNo, Parent);</pre
+      >
+    </div>
+    <div class="box">
+      <h2>2. Write code to explain prototype chaining.</h2>
+      <pre>
+  function student(name, rollNo) {
+    this.name = name;
+    this.rollNo = rollNo;
+  }
+  let s1 = new student("Kiran", 101);
+  let s2 = new student("Kumar", 102);
+  console.log(s1);
+  console.log(s2);
+  s1.age = 22;</pre
+      >
+    </div>
+    <div class="box">
+      <h2>
+        3. Add a method to calculate sum of all elements in Array in array's
+        prototype, use that method to calculate sum for multiple arrays.
+      </h2>
+      <pre>
+  const array = {
+    arrTotal: function (arr) {
+      let sum = 0;
+      for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+      }
+      console.log(sum);
+    },
+  };
+
+  Array.__proto__ = array;
+  arr1 = [1, 2, 3, 4];
+  arr2 = [11, 12, 13, 14];
+  Array.arrTotal(arr1);
+  Array.arrTotal(arr2);</pre
+      >
+    </div>
+    <div class="box">
+      <h2>
+        4. Write a JavaScript function to retrieve all the names of object's own
+        and inherited properties..
+      </h2>
+      <pre>
+  var obj1 = {
+    name: "Kirankumar Falmari",
+    course: "Fullstack",
+  };
+
+  let result = Object.keys(obj1);
+  console.log(result);</pre
+      >
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>
